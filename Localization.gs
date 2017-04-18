@@ -1,33 +1,27 @@
 // LIBRARIES/FRAMEWORKS
 /*
   We overload Logger and use BetterLog instead since we can't log live code using the native Logger
-  With this we can see the current Logs here at https://docs.google.com/spreadsheets/d/1LMngz1nB3ykCatIewd4hg49v1eHgtGF2mz--DCHgfbk/edit#gid=1737728411
+  With this we can see the current Logs here at https://docs.google.com/spreadsheets/d/SOMEKEYHERE/edit#gid=12312312412412
   Using this inside loops may cause the algorithm to run quite slow.
 */
-Logger = BetterLog.useSpreadsheet("1LMngz1nB3ykCatIewd4hg49v1eHgtGF2mz--DCHgfbk"); 
+Logger = BetterLog.useSpreadsheet("< INSERT SOME GSHEETS KEY HERE>"); 
 
-// Configurable properties
-
+/******* Constants *******/
+// DEVICE TYPES 
+var DEVICE_IOS      = 'iOS';
+var DEVICE_ANDROID  = 'Android';
+var OUTPUT_INCLUDES_COMMENTS = true;
+/* The position of the header containing the strings "Identifier iOS" and "Identifier Android" */
+var HEADER_ROW_POSITION = 1;
 /* Number of supported languages */
 var NUMBER_OF_LANGUAGES = 2;
 var DEFAULT_HEADER_FIELDS = NUMBER_OF_LANGUAGES + 3;
-
 /* 
   The script expects two columns for iOS and Android identifiers, respectively,
   and a column after that with all of the string values. This is the position of
   the iOS column.
 */
 var FIRST_COLUMN_POSITION = 2;
-
-/* The position of the header containing the strings "Identifier iOS" and "Identifier Android" */
-var HEADER_ROW_POSITION = 1;
-
-var OUTPUT_INCLUDES_COMMENTS = true;
-
-/******* Constants *******/
-// DEVICE TYPES 
-var DEVICE_IOS      = 'iOS';
-var DEVICE_ANDROID  = 'Android';
 
 // Export
 function onOpen() {
