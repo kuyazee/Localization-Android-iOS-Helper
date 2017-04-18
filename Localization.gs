@@ -25,22 +25,18 @@ var FIRST_COLUMN_POSITION = 2;
 
 // Export
 function onOpen() {
-  Logger.log("onOpen");
   var ui = SpreadsheetApp.getUi();
   ui.createMenu('Custom Export To')
     .addItem('iOS', 'localizeForIOS')
     .addItem('Android', 'localizeForAndroid')
     .addToUi();
-  Logger.log("onOpen");
 }
 
 function localizeForIOS() {
-  Logger.log("localizeForIOS");
   getLocalizedStringFor(DEVICE_IOS);
 }
 
 function localizeForAndroid() {
-  Logger.log("localizeForAndroid");
   getLocalizedStringFor(DEVICE_ANDROID);
 }
 
